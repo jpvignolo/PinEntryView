@@ -3,14 +3,14 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 android {
-    compileSdkVersion Integer.parseInt(ANDROID_BUILD_SDK_VERSION)
-    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion Integer.parseInt(ANDROID_BUILD_MIN_SDK_VERSION)
-        targetSdkVersion Integer.parseInt(ANDROID_BUILD_TARGET_SDK_VERSION)
-        versionCode Integer.parseInt(VERSION_CODE)
-        versionName VERSION_NAME
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 9
+        versionName '1.1.0-SNAPSHOT'
     }
     buildTypes {
         release {
@@ -22,7 +22,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:27.1.1'
 }
 
 def isReleaseBuild() {
@@ -53,9 +53,9 @@ afterEvaluate { project ->
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-                pom.groupId = GROUP
+                pom.groupId = 'me.philio'
                 pom.artifactId = POM_ARTIFACT_ID
-                pom.version = VERSION_NAME
+                pom.version = '1.1.0-SNAPSHOT'
 
                 repository(url: getReleaseRepositoryUrl()) {
                     authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
@@ -67,27 +67,27 @@ afterEvaluate { project ->
                 pom.project {
                     name POM_NAME
                     packaging POM_PACKAGING
-                    description POM_DESCRIPTION
-                    url POM_URL
+                    description 'PinEntryView'
+                    url 'https://github.com/Philio/PinEntryView'
 
                     scm {
-                        url POM_SCM_URL
-                        connection POM_SCM_CONNECTION
-                        developerConnection POM_SCM_DEV_CONNECTION
+                        url 'https://github.com/Philio/PinEntryView'
+                        connection 'scm:git@github.com:Philio/PinEntryView.git'
+                        developerConnection 'scm:git@github.com:Philio/PinEntryView.git'
                     }
 
                     licenses {
                         license {
-                            name POM_LICENCE_NAME
-                            url POM_LICENCE_URL
-                            distribution POM_LICENCE_DIST
+                            name 'The Apache Software License, Version 2.0'
+                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                            distribution 'repo'
                         }
                     }
 
                     developers {
                         developer {
-                            id POM_DEVELOPER_ID
-                            name POM_DEVELOPER_NAME
+                            id 'philio'
+                            name 'Phil Bayfield'
                         }
                     }
                 }
