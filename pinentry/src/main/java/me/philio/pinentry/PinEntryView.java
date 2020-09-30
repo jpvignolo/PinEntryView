@@ -98,7 +98,7 @@ public class PinEntryView extends ViewGroup {
     /**
      * Pin entered listener used as a callback for when all digits have been entered
      */
-    private OnPinEnteredListener onPinEnteredListener;
+    public OnPinEnteredListener onPinEnteredListener;
 
     /**
      * If set to false, will always draw accent color if type is CHARACTER or ALL
@@ -483,7 +483,7 @@ public class PinEntryView extends ViewGroup {
     /**
      * Custom text view that adds a coloured accent when selected
      */
-    private class DigitView extends TextView {
+    private class DigitView extends androidx.appcompat.widget.AppCompatTextView {
 
         /**
          * Paint used to draw accent
