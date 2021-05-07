@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PinEntryView.iml" filepath="$PROJECT_DIR$/.idea/modules/PinEntryView.iml" group="PinEntryView" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/demo.iml" group="PinEntryView/demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pinentry/pinentry.iml" filepath="$PROJECT_DIR$/.idea/modules/pinentry/pinentry.iml" group="PinEntryView/pinentry" />
+    </modules>
+  </component>
+</project>
